@@ -35,7 +35,7 @@ documents = SimpleDirectoryReader('data').load_data()
 
 
 
-index = GPTSimpleVectorIndex(
+index = GPTListIndex(
     documents, llm_predictor=llm_predictor, prompt_helper=prompt_helper
 )
 
