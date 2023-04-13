@@ -30,7 +30,7 @@ prompt_helper = PromptHelper(max_input_size, num_output, max_chunk_overlap)
 
 #PandasCSVReader = download_loader("PandasCSVReader")
 
-#loader = PandasCSVReader()
+loader = PandasCSVReader()
 documents = loader.load_data(file=Path('./data/jebo_2.csv'), column_name=("nickname", "contents", "date", "latitude", "longitude"))
 
 
