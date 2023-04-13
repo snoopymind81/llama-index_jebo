@@ -31,7 +31,7 @@ prompt_helper = PromptHelper(max_input_size, num_output, max_chunk_overlap)
 PandasCSVReader = download_loader("PandasCSVReader")
 
 loader = PandasCSVReader()
-documents = loader.load_data(file=Path('./data/jebo_4.csv'))
+documents = loader.load_data(file=Path('./data/jebo_5.csv'))
 
 
 
@@ -40,7 +40,7 @@ index = GPTSimpleVectorIndex(
 )
 
 # Define a simple Streamlit app
-st.title("Jebo Data_case104")
+st.title("Jebo Data_case200")
 query = st.text_input("제보에는 무슨 일이 일어났을까요?", "")
 
 if st.button("Submit"):
