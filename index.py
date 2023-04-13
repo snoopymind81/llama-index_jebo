@@ -33,8 +33,8 @@ index = GPTSimpleVectorIndex(
 )
 
 # Define a simple Streamlit app
-st.title("Ask Llama")
-query = st.text_input("What would you like to ask?", "")
+st.title("Jebo Data 1000")
+query = st.text_input("제보에는 무슨 일이 일어났을까요?", "")
 
 if st.button("Submit"):
     response = index.query(query)
