@@ -5,11 +5,11 @@ import os, streamlit as st
 
 
 from pathlib import Path
-from llama_index import GPTSimpleVectorIndex, SimpleDirectoryReader, LLMPredictor, PromptHelper, download_loader
+from llama_index import GPTSimpleVectorIndex, SimpleDirectoryReader, LLMPredictor, PromptHelper
 from langchain import OpenAI
 
 # This example uses text-davinci-003 by default; feel free to change if desired
-llm_predictor = LLMPredictor(llm=OpenAI(temperature=0.7, model_name="text-davinci-003"))
+llm_predictor = LLMPredictor(llm=OpenAI(temperature=0, model_name="text-davinci-003"))
 
 # Configure prompt parameters and initialise helper
 max_input_size = 4000
@@ -19,10 +19,10 @@ max_chunk_overlap = 20
 prompt_helper = PromptHelper(max_input_size, num_output, max_chunk_overlap)
 
 # Load documents from the 'data' directory
-##documents = SimpleDirectoryReader('data').load_data()
+#documents = SimpleDirectoryReader('data').load_data()
 
 
-PandasExcelReader = download_loader("PandasExcelReader")
+#PandasExcelReader = download_loader("PandasExcelReader")
 
 #loader = PandasExcelReader()
 #documents = loader.load_data(file=Path('./data/jebo.xlsx'), column_name="nickname", column_name="contents", column_name="date", column_name="latitude", column_name="longitude", pandas_config={"sheet_name":"Sheet1"})
