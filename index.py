@@ -24,9 +24,15 @@ prompt_helper = PromptHelper(max_input_size, num_output, max_chunk_overlap)
 
 PandasExcelReader = download_loader("PandasExcelReader")
 
-loader = PandasExcelReader()
+#loader = PandasExcelReader()
 #documents = loader.load_data(file=Path('./data/jebo.xlsx'), column_name="nickname", column_name="contents", column_name="date", column_name="latitude", column_name="longitude", pandas_config={"sheet_name":"Sheet1"})
-documents = loader.load_data(file=Path('./data/jebo.xlsx'), column_name=("nickname", "contents", "date", "latitude", "longitude"), pandas_config={"sheet_name":"Sheet1"})
+#documents = loader.load_data(file=Path('./data/jebo.xlsx'), column_name=("nickname", "contents", "date", "latitude", "longitude"), pandas_config={"sheet_name":"Sheet1"})
+
+PandasCSVReader = download_loader("PandasCSVReader")
+
+loader = PandasCSVReader()
+documents = loader.load_data(file=Path('./data/jebo.csv'))
+
 
 
 index = GPTSimpleVectorIndex(
