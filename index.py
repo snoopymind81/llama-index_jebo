@@ -19,7 +19,7 @@ max_chunk_overlap = 20
 prompt_helper = PromptHelper(max_input_size, num_output, max_chunk_overlap)
 
 # Load documents from the 'data' directory
-documents = SimpleDirectoryReader('data').load_data()
+#documents = SimpleDirectoryReader('data').load_data()
 
 
 #PandasExcelReader = download_loader("PandasExcelReader")
@@ -31,11 +31,11 @@ documents = SimpleDirectoryReader('data').load_data()
 #PandasCSVReader = download_loader("PandasCSVReader")
 
 #loader = PandasCSVReader()
-#documents = loader.load_data(file=Path('./data/jebo_2.csv'))
+documents = loader.load_data(file=Path('./data/jebo_2.csv'), column_name=("nickname", "contents", "date", "latitude", "longitude"))
 
 
 
-index = GPTListIndex(
+index = GPTSimpleVectorIndex(
     documents, llm_predictor=llm_predictor, prompt_helper=prompt_helper
 )
 
