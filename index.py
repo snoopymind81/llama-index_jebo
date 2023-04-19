@@ -33,13 +33,17 @@ prompt_helper = PromptHelper(max_input_size, num_output, max_chunk_overlap)
 # PandasCSVReader = download_loader("PandasCSVReader")
 
 
-df=pd.read_csv('./data/jebo.csv')
+# df=pd.read_csv('./data/jebo.csv')
 
 
-loader = DataFrameLoader(df, page_content_column="nickname")
-documents = loader.load()
+#loader = DataFrameLoader(df, page_content_column="nickname")
+#documents = loader.load()
 #loader = PandasCSVReader()
-#documents = loader.load_data(file=Path('./data/jebo.csv'))
+
+simpleCSVReader = download_loader("SimpleCSVReader")
+
+loader = SimpleCSVReader()
+documents = loader.load_data(file=Path('./data/jebo.csv'))
 
 
 
