@@ -40,7 +40,7 @@ prompt_helper = PromptHelper(max_input_size, num_output, max_chunk_overlap)
 #documents = loader.load()
 #loader = PandasCSVReader()
 
-simpleCSVReader = download_loader("SimpleCSVReader")
+SimpleCSVReader = download_loader("SimpleCSVReader")
 
 loader = SimpleCSVReader()
 documents = loader.load_data(file=Path('./data/jebo.csv'))
